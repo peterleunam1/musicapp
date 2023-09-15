@@ -9,12 +9,13 @@ export default defineConfig({
     alias: {
       app: resolve(__dirname, 'src', 'app'),
       components: resolve(__dirname, 'src', 'components'),
-      constans: resolve(__dirname, 'src', 'constans'),
+      constant: resolve(__dirname, 'src', 'constant'),
       hooks: resolve(__dirname, 'src', 'hooks'),
       models: resolve(__dirname, 'src', 'models'),
       utils: resolve(__dirname, 'src', 'utils'),
       redux: resolve(__dirname, 'src', 'redux'),
       services: resolve(__dirname, 'src', 'services'),
+      pages: resolve(__dirname, 'src', 'pages'),
     },
   },
 })

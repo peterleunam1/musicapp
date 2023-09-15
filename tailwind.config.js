@@ -11,6 +11,7 @@ export default {
       },
       fontFamily: {
         signika: ['Signika', 'sans-serif'],
+        epilogue: ['Epilogue', 'sans-serif'],
       },
     },
     plugins: [],
