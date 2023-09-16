@@ -6,7 +6,7 @@ export default function AuthLayout ({ children }: ChildrenModel) {
   return (
     <main className={styles.main}>
       <picture className={styles.main__picture}>
-        <img src={IMAGE} alt="main-image" />
+        <img src={IMAGE} alt="main-image" loading='lazy' />
       </picture>
       {children}
     </main>

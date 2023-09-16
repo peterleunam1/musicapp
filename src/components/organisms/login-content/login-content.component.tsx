@@ -21,7 +21,7 @@ export default function LoginContent ({ onLogin }: LoginContentProps) {
         </Button>
       </div>
       <picture className={styles.section__signature}>
-        <img src={SIGNATURE} alt="siganture" />
+        <img src={SIGNATURE} alt="siganture" loading='lazy' />
       </picture>
     </section>
   )
