@@ -28,8 +28,9 @@
       "utils": ["src/utils"],
       "constant": ["src/constant"],
       "services": ["src/services"],
-      "redux/*": ["src/redux/*"],
+      // "redux/*": ["src/redux/*"],
       "pages": ["src/pages"],
+      "guards": ["src/guards"],
     }
   },
   "include": ["src"],

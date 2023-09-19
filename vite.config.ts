@@ -13,9 +13,10 @@ export default defineConfig({
       hooks: resolve(__dirname, 'src', 'hooks'),
       models: resolve(__dirname, 'src', 'models'),
       utils: resolve(__dirname, 'src', 'utils'),
-      redux: resolve(__dirname, 'src', 'redux'),
+      // redux: resolve(__dirname, 'src', 'redux'),
       services: resolve(__dirname, 'src', 'services'),
       pages: resolve(__dirname, 'src', 'pages'),
+      guards: resolve(__dirname, 'src', 'guards'),
     },
   },
 })

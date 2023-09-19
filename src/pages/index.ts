@@ -1,1 +1,2 @@
-export { default as Login } from './login/login'
+export * from './private'
+export * from './login'
