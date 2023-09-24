@@ -1,5 +1,7 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { type UserModel } from '../store'
+import { clearLocalStorage, getLocalStorage, persistLocalStorage } from 'utils'
+import { LocalStorageTypes } from 'constant'
 
 const initialState: UserModel = {
   id: '',
@@ -8,12 +10,19 @@ const initialState: UserModel = {
 }
 const userSlice = createSlice({
   name: 'user',
-  initialState,
+
+  initialState: getLocalStorage(LocalStorageTypes.USER)
+    ? getLocalStorage(LocalStorageTypes.USER)
+    : initialState,
+
   reducers: {
     setUser: (state, action: PayloadAction<UserModel>) => {
-      return { ...state, ...action.payload }
+      const result = { ...state, ...action.payload }
+      persistLocalStorage<UserModel>(LocalStorageTypes.USER, result)
+      return result
     },
     resetUser: () => {
+      clearLocalStorage(LocalStorageTypes.USER)
       return initialState
     }
   }

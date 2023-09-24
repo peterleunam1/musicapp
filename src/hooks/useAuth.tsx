@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { persistLocalStorage, getTokenFromUrl, getPropertiesFromCurrentUser } from 'utils'
-import { AUTH_URL, PrivateRoutes } from 'constant'
-import { resetUser, setUser } from '../redux/states/user'
-import getCurrentUser from '../services/get-current-user.service'
+import { getCurrentUser } from 'services'
 import { type CurrentUser } from 'models'
+import {
+  persistLocalStorage,
+  getTokenFromUrl,
+  getPropertiesFromCurrentUser
+} from 'utils'
+import { LocalStorageTypes, PrivateRoutes } from 'constant'
+import { setUser } from '../redux/states/user'
+import useNavigation from './useNavigation'
 
 export default function useAuth () {
   const [error, setError] = useState<string>('')
-  const navigate = useNavigate()
   const dispatch = useDispatch()
+  const { goTo } = useNavigation()
   const token = getTokenFromUrl()
-  persistLocalStorage<string>('token-spotify', token)
-
-  const handleToken = () => {
-    window.location.href = AUTH_URL
-  }
+  persistLocalStorage<string>(LocalStorageTypes.TOKEN, token)
 
   const getUser = async () => {
     try {
@@ -28,14 +28,15 @@ export default function useAuth () {
   }
 
   useEffect(() => {
-    dispatch(resetUser())
     getUser().then((response) => {
       if (response) {
         dispatch(setUser(response))
-        navigate(`/${PrivateRoutes.PRIVATE}`)
+        goTo(`/${PrivateRoutes.PRIVATE}`)
+      } else {
+        setError('there was an error')
       }
     })
   }, [])
 
-  return { handleToken, error }
+  return { error }
 }

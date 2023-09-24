@@ -1,14 +1,14 @@
-import { PrivateRoutes } from 'constant'
+import { lazy } from 'react'
 import { Route } from 'react-router-dom'
-import { Home } from './home'
-import About from './about/about'
+import { PrivateRoutes } from 'constant'
 import { RoutesWithWotFound } from 'utils'
+
+const Home = lazy(async () => await import('./home/home'))
 
 export default function Private () {
   return (
     <RoutesWithWotFound>
       <Route path={PrivateRoutes.HOME} element={<Home />} />
-      <Route path={PrivateRoutes.ABOUT} element={<About />} />
     </RoutesWithWotFound>
   )
 }

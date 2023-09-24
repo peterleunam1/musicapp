@@ -1,5 +1,6 @@
 export const PublicRoutes = {
-  LOGIN: 'login'
+  LOGIN: 'login',
+  CALLBACK: 'callback'
 }
 export const PrivateRoutes = {
   PRIVATE: 'private',

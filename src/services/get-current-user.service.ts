@@ -1,8 +1,9 @@
+import { LocalStorageTypes } from 'constant'
 import { type CurrentUser } from 'models'
 import { getLocalStorage } from 'utils'
 
 export default async function getCurrentUser (): Promise<CurrentUser | undefined> {
-  const token: string = getLocalStorage('token-spotify')
+  const token: string = getLocalStorage(LocalStorageTypes.TOKEN)
   try {
     const response = await fetch('https://api.spotify.com/v1/me', {
       headers: {

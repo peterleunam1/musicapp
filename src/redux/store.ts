@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import userSlice from './states/user'
+import { userSlice } from './states'
 
 export interface UserModel {
   id: string
