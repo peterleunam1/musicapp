@@ -1,5 +1,5 @@
-import { type ChildrenModel } from 'models'
 import { Route, Routes } from 'react-router-dom'
+import { type ChildrenModel } from 'models'
 
 export default function RoutesWithNotFound ({ children }: ChildrenModel) {
   return (

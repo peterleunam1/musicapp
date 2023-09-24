@@ -1,5 +1,4 @@
-import { type CurrentUser } from 'models'
-import { type UserModel } from '../redux/store'
+import { type CurrentUser, type UserModel } from 'models'
 
 export const getPropertiesFromCurrentUser = (currentUser: CurrentUser): UserModel | null => {
   if (currentUser === undefined) return null

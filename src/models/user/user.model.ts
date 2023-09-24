@@ -1,7 +1,3 @@
-export interface ChildrenModel {
-  children: React.ReactNode
-}
-
 export interface CurrentUser {
   country: string
   display_name: string
@@ -29,4 +25,10 @@ interface ExternalUrls {
 interface Followers {
   href: null
   total: number
+}
+
+export interface UserModel {
+  id: string
+  name: string
+  email: string
 }

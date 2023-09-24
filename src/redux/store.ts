@@ -1,15 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { userSlice } from './states'
-
-export interface UserModel {
-  id: string
-  name: string
-  email: string
-}
-
-export interface AppStore {
-  user: UserModel
-}
+import { type AppStore } from 'models'
 
 export const store = configureStore<AppStore>({
   reducer: {

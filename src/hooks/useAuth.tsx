@@ -7,7 +7,7 @@ import {
   getTokenFromUrl,
   getPropertiesFromCurrentUser
 } from 'utils'
-import { LocalStorageTypes, PrivateRoutes } from 'constant'
+import { localStorageTypes, privateRoutes } from 'constant'
 import { setUser } from '../redux/states/user'
 import useNavigation from './useNavigation'
 
@@ -16,7 +16,7 @@ export default function useAuth () {
   const dispatch = useDispatch()
   const { goTo } = useNavigation()
   const token = getTokenFromUrl()
-  persistLocalStorage<string>(LocalStorageTypes.TOKEN, token)
+  persistLocalStorage<string>(localStorageTypes.TOKEN, token)
 
   const getUser = async () => {
     try {
@@ -31,7 +31,7 @@ export default function useAuth () {
     getUser().then((response) => {
       if (response) {
         dispatch(setUser(response))
-        goTo(`/${PrivateRoutes.PRIVATE}`)
+        goTo(`/${privateRoutes.PRIVATE}`)
       } else {
         setError('there was an error')
       }
