@@ -1,0 +1,10 @@
+.main {
+  @apply w-[85%] h-[100vh] m-auto flex flex-row-reverse justify-between max-w-[1440px] items-center overflow-x-hidden font-signika 
+  max-lg:w-[95%] max-sm:block max-sm:w-full max-sm:relative;
+}
+.main__picture {
+  @apply relative w-[40%] h-[85vh] max-sm:w-full;
+}
+.main__picture img {
+  @apply object-cover w-full h-full rounded-lg max-sm:rounded-none;
+}
