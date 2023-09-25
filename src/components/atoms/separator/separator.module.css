@@ -1,9 +1,0 @@
-.separator {
-  @apply bg-primary rounded-sm mb-[.375rem] opacity-80 last-of-type:mb-0;
-}
-.separator--horizontal {
-  @apply w-[120%] h-[.1875rem] max-sm:w-full;
-}
-.separator--vertical {
-  @apply h-full w-1;
-}

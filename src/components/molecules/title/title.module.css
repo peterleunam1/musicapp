@@ -1,7 +1,0 @@
-.container {
-  @apply relative w-full h-[3.75rem] flex flex-col items-center justify-center max-sm:mt-[30%];
-}
-.container__title {
-  @apply absolute top-[50%] left-[12%] translate-y-[-55%] text-[3.5rem] border-none font-signika text-accentPrimary 
-  opacity-90 max-sm:text-bg max-sm:opacity-100 max-sm:text-[2.8rem] max-sm:left-0 max-sm:text-center max-sm:w-full;
-}
